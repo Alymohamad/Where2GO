@@ -1,33 +1,51 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
+export class User {
+  public city: string;
+  public email: string;
+  public password: string;
+  public filter: string;
+}
 @Component({
   selector: 'app-new-search',
   templateUrl: './new-search.component.html',
   styleUrls: ['./new-search.component.css']
 })
-export class NewSearchComponent implements OnInit {
+export class NewSearchComponent {
+  
+  model = new User();
+  Filter: string[] = [
+    'Restaurant',
+    'Museum',
+    'Park',
+    'Cinema',
+    'Church',
+    'Football',
+    'Tennis',
+    'Golf',
+    'Handball',
+    'Opera',
+    'Theater',
+    'Synagogue',
+    'Mosque',
+    'Jehovah Whitness',
+    'Freemasons',
+    'Swimming',
+    'Gym',
+    'Leisure Activity',
+    'Climbing',
+    'Hiking',
+    'Running',
+    'Dancing',
+    'Bike'
+    
+];
 
-  loginForm: FormGroup;
-  emailRegx = /^(([^<>+()\[\]\\.,;:\s@"-#$%&=]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/;
+constructor(private router: Router) { }
 
-  constructor(
-    private formBuilder: FormBuilder
-  ) { }
-
-  ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      email: [null, [Validators.required, Validators.pattern(this.emailRegx)]],
-      password: [null, Validators.required]
-    });
+  onSubmit(form) {
+    console.log(form.value)
+    this.router.navigateByUrl('/map-result');
   }
-
-  submit() {
-    if (!this.loginForm.valid) {
-      return;
-    }
-    console.log(this.loginForm.value);
-
-  }
-
 }

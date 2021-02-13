@@ -23,6 +23,9 @@ import { MatRadioModule } from '@angular/material/radio';
 import { ReactiveFormsModule } from '@angular/forms';
 import { NewSearchComponent } from './components/new-search/new-search.component';
 
+import { FormsModule } from '@angular/forms';
+import { GoogleMapsModule } from '@angular/google-maps'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,6 +54,8 @@ import { NewSearchComponent } from './components/new-search/new-search.component
     MatInputModule,
     MatButtonModule,
     MatCheckboxModule,
+    FormsModule,
+    GoogleMapsModule
   ],
   exports: [
     MatButtonModule,

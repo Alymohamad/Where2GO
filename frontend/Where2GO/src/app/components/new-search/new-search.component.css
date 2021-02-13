@@ -1,13 +1,13 @@
-.example-container{
-    text-align: center
+html, body {
+    background: #f7f7f7 !important;
 }
 
-.form-container{
-    width: 400 px; 
-    margin: 0 px auto; 
-    margin-top: 200 px
+form {
+    max-width: 450px;
+    margin: 50px auto;
+    font-size: large;
 }
 
-.form-field{
-    display: block
-}
+.heighttext{
+    height:1000px
+  }
