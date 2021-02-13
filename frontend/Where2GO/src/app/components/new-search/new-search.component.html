@@ -1,0 +1,21 @@
+<div class="example-container">
+    <div class="form-container">
+      <form [formGroup]="loginForm" (submit)="submit()">
+        <mat-form-field class="form-field" appearance="outline">
+          <mat-label> Your Destination
+          </mat-label>
+          <input matInput formControlName="email" required>
+          <mat-error *ngIf="loginForm.controls.email.touched && loginForm.controls.email.invalid">
+            <span *ngIf="loginForm.controls.email.errors.required">This field is mandatory.</span>
+          </mat-error>
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" class="nav-item" [routerLink]="['/map-result']">Find Destination</button>
+        <mat-radio-group aria-label="Select an option">
+          <mat-radio-button value="1">Museum</mat-radio-button>
+          <mat-radio-button value="2">Leisure activity</mat-radio-button>
+          <mat-radio-button value="3">Park</mat-radio-button>
+          <mat-radio-button value="4">Sight</mat-radio-button>
+        </mat-radio-group>
+      </form>
+    </div>
+  </div>
