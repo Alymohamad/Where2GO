@@ -26,14 +26,16 @@ import { NewSearchComponent } from './components/new-search/new-search.component
 import { FormsModule } from '@angular/forms';
 import { GoogleMapsModule } from '@angular/google-maps'
 import { MatSliderModule } from '@angular/material/slider';
-
+import { MapResult2Component } from './components/map-result2/map-result2.component';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationSiteComponent,
     MapResultComponent,
-    NewSearchComponent
+    NewSearchComponent,
+    MapResult2Component
   ],
   imports: [
     BrowserModule,
@@ -60,6 +62,9 @@ import { MatSliderModule } from '@angular/material/slider';
     GoogleMapsModule,
     MatSliderModule,
     GoogleMapsModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyBmIO594wcxzhjsoGiSHfIDzJifq5wT4kA'
+    }),
   ],
   exports: [
     MatButtonModule,

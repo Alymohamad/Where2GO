@@ -55,6 +55,6 @@ constructor(private router: Router) { }
   onSubmit(form) {
     
     console.log(form.value)
-    this.router.navigate(['/map-result','Wien','Restaurant']);
+    this.router.navigate(['/map-result', 'Wien', 'Restaurant', '50']);
   }
 }
