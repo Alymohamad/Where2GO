@@ -25,6 +25,8 @@ import { NewSearchComponent } from './components/new-search/new-search.component
 
 import { FormsModule } from '@angular/forms';
 import { GoogleMapsModule } from '@angular/google-maps'
+import { MatSliderModule } from '@angular/material/slider';
+
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { GoogleMapsModule } from '@angular/google-maps'
     MatButtonModule,
     MatCheckboxModule,
     FormsModule,
-    GoogleMapsModule
+    GoogleMapsModule,
+    MatSliderModule,
+    GoogleMapsModule,
   ],
   exports: [
     MatButtonModule,

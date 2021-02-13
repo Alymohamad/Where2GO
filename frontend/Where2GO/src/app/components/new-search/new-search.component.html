@@ -1,15 +1,22 @@
 <form #userForm="ngForm" (ngSubmit)="userForm.form.valid && onSubmit(userForm)">
     <div class="form-group">
         <label>City</label>
+        <br>
         <input class="heighttext" type="text" name="name" class="form-control" [(ngModel)]="model.city" #name="ngModel"
             [ngClass]="{ 'is-invalid': userForm.submitted && name.invalid }" required>
         <div class="invalid-feedback" *ngIf="userForm.submitted && name.invalid">
             <p *ngIf="name.errors.required">City is required</p>
         </div>
+        <br><br><br>
+        <span>Radius: </span><b class="gridSizeValue">{{gridsize.value}} km</b>
+        <br>
+        <mat-slider #gridsize (change)="updateSetting($event)" step="1" min="1" max="50" [value]="gridsize"></mat-slider>
+        <br>
     </div>
 
     <div class="form-group">
         <label>Filter</label>
+        <br>
         <select class="form-control" name="filter" [(ngModel)]="Filter">
           <option value="">Select an option</option>
           <option *ngFor="let filter of Filter" [value]="filter">
@@ -19,6 +26,6 @@
       </div>
     
       <div class="form-group">
-        <button class="btn btn-danger btn-block">Submit</button>
+        <button class="btn btn-danger btn-block">Show destination</button>
       </div>
     </form>

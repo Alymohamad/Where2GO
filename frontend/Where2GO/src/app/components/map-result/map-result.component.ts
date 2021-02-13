@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core'
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps'
 
 @Component({
@@ -7,6 +7,7 @@ import { MapInfoWindow, MapMarker, GoogleMap } from '@angular/google-maps'
   styleUrls: ['./map-result.component.css']
 })
 export class MapResultComponent implements OnInit {
+
   @ViewChild(GoogleMap, { static: false }) map: GoogleMap
   @ViewChild(MapInfoWindow, { static: false }) info: MapInfoWindow
 
@@ -29,6 +30,7 @@ export class MapResultComponent implements OnInit {
         lat: position.coords.latitude,
         lng: position.coords.longitude,
       }
+      
     })
   }
 
