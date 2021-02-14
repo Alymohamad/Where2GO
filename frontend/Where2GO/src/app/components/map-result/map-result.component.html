@@ -1,0 +1,13 @@
+<h1>{{ title }}</h1>
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<agm-map [zoom]="18" [latitude]="lat" [longitude]="lng">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>
+
+<p> Adress of Location: {{ location.address }} </p>
+<p> Type: {{ location.type }} </p>
+<p>{{ location.rating }} Star rating. Number of Ratings: {{ location.ratingsNum }}</p>
+<p> open now: {{ location.openNow }} </p>
+
