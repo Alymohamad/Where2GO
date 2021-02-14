@@ -32,7 +32,6 @@ public class PlacesService {
 
     private static final String OUT_JSON = "/json";
 
-    //TODO: Prop File verwenden
     private static String API_KEY;
 
     @Value("${api_key}")
@@ -40,7 +39,6 @@ public class PlacesService {
         PlacesService.API_KEY = key;
     }
 
-    //TODO: Parameter bei Endpoint call mit slider oder nummer auswählen
     private static final String DEFAULT_RADIUS = "30000";
 
     public Response getLocationByCityAndType(String keyword, double lat, double lng, int radius){
@@ -49,10 +47,8 @@ public class PlacesService {
         Location randomLocation = null;
         resultList = search(keyword, lat, lng, radius);
         if (resultList == null){
-            //TODO: Fehler 500 zurückgeben
             return new Response(randomLocation, ResponseStatus.SOMETHING_WENT_WRONG);
         } else if (resultList.size() == 0) {
-            //TODO: Fehler Code 500 zurückgeben besser als lehre Location?
             return new Response(randomLocation, ResponseStatus.NO_LOCATIONS_FOUND);
         }
         randomLocation = RandomPickerService.getRandomLocation(resultList);
@@ -73,7 +69,6 @@ public class PlacesService {
             sb.append("&keyword=" + URLEncoder.encode(keyword, "utf8"));
             sb.append("&location=" + String.valueOf(lat) + "," + String.valueOf(lng));
             if (radius > 0 && radius <= 50){
-                //TODO: Am Frontend muss radius von 1 bis 50 gehen
                 sb.append("&radius=" + radius*1000);
 
             } else {
@@ -109,7 +104,6 @@ public class PlacesService {
 
             resultList = new ArrayList<Location>(predsJsonArray.length());
             for (int i = 0; i < predsJsonArray.length(); i++) {
-                //TODO: Nur setzen wenn ich was zurück bekomme? was ist wenn open now nicht da ist?
                 Location location = fillLocation(predsJsonArray,i);
                 resultList.add(location);
             }

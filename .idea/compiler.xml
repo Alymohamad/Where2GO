@@ -9,5 +9,13 @@
         <module name="spring-boot" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="spring-boot" target="13" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="spring-boot" options="" />
+    </option>
   </component>
 </project>

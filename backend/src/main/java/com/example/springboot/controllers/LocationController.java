@@ -23,8 +23,6 @@ public class LocationController {
     private PlacesService placesService;
     private static final Logger logger = LoggerFactory.getLogger(LocationController.class);
 
-    //TODO: Eingabe PArameter müssen überprüft werden und gefiltert und bei keinem Ergebniss eine Seite machen
-
     @Autowired
     public void setMyService(PlacesService placesService) {
         this.placesService = placesService;

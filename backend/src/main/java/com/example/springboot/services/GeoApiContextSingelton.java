@@ -13,8 +13,6 @@ public class GeoApiContextSingelton {
     private String apiKey;
 
     private GeoApiContextSingelton() {
-        //TODO: Prop File verwenden
-
         context = new GeoApiContext.Builder()
                 .apiKey(ApiKeyUtil.getInstance().getApiKey())
                 .build();

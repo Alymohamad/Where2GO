@@ -52,8 +52,6 @@ public class GeoEncodingService {
     }
 
     public String getLatLongByNameString(String cityName){
-        //TODO: Wenn nicht gefunden dann Wien Error message zurüclgeben mit City/Location not Found
-        //TODO: Prop File verwenden
         GeoApiContext context = new GeoApiContext.Builder()
                 .apiKey(ApiKeyUtil.getInstance().getApiKey())
                 .build();
