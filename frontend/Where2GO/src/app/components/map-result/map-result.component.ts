@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Input} from '@angular/core';
+import { Location } from 'src/app/models/Location';
+import { SearchService } from 'src/app/services/search.service';
+
 
 @Component({
   selector: 'app-map-result',
@@ -7,7 +10,24 @@ import { Component } from '@angular/core';
 })
 export class MapResultComponent  {
 
-  title = 'My first AGM project';
-  lat = 48.158031;
-  lng = 16.382370;
+  private searchService: SearchService;
+  public location: Location;
+
+  public lat: number;
+  public lng: number;
+  public title: String;
+
+
+  constructor(searchService: SearchService) {
+    this.searchService = searchService;
+    this.location = searchService.getLocation();
+    console.log("I AM HEEEEEREEEE " + this.location.latitude)
+    console.log("I AM HEEEEEREEEE " + this.location.longitude)
+    console.log("I AM HEEEEEREEEE " + this.location.name)
+    this.lat = this.location.latitude
+    this.lng = this.location.longitude
+    this.title = this.location.name
+
+
+  }
 }

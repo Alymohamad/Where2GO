@@ -27,6 +27,9 @@ import { FormsModule } from '@angular/forms';
 import { GoogleMapsModule } from '@angular/google-maps'
 import { MatSliderModule } from '@angular/material/slider';
 import { AgmCoreModule } from '@agm/core';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
@@ -60,8 +63,9 @@ import { AgmCoreModule } from '@agm/core';
     GoogleMapsModule,
     MatSliderModule,
     GoogleMapsModule,
+    HttpClientModule,
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyBmIO594wcxzhjsoGiSHfIDzJifq5wT4kA'
+      apiKey: 'YOUR API KEY'
     }),
   ],
   exports: [

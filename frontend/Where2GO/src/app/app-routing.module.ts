@@ -6,7 +6,7 @@ import { NewSearchComponent } from './components/new-search/new-search.component
 const routes: Routes = [
   {path:'', component:NewSearchComponent},
   {path:'new-search', component:NewSearchComponent},
-  {path:'map-result/:id/:id2/:id3', component:MapResultComponent},
+  {path:'map-result', component:MapResultComponent},
 ];
 
 @NgModule({

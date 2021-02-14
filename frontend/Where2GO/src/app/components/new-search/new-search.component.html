@@ -19,7 +19,7 @@
   <div class="form-group">
     <label>Filter</label>
     <br>
-    <select class="form-control" name="filter" [(ngModel)]="Filter">
+    <select class="form-control" name="filter" [(ngModel)]="selectedFilter" required>
       <option value="">Select an option</option>
       <option *ngFor="let filter of Filter" [value]="filter">
         {{filter}}
