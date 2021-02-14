@@ -1,2 +1,2 @@
 variables:
-  ImageName: 'faelfael/openapi:$(Build.Repository.Name).$(Build.BuildId)'
+  ImageName: 'faelfael/wheretogo.$(Build.BuildId)'
