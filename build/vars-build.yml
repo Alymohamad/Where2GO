@@ -1,0 +1,2 @@
+variables:
+  ImageName: 'faelfael/wheretogo.$(Build.BuildId)'

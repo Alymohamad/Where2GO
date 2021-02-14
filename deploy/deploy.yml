@@ -1,0 +1,4 @@
+steps:
+- script: |
+    echo 'Deploying to $(Environment)!'
+  displayName: 'Run Deployment'

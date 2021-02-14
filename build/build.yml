@@ -1,0 +1,39 @@
+steps:
+- task: JavaToolInstaller@0
+  inputs:
+    versionSpec: '11'
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'PreInstalled'
+
+- task: Maven@3
+  inputs:
+    mavenPomFile: 'pom.xml'
+    javaHomeOption: 'JDKVersion'
+    testRunner: JUnit
+    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    testRunTitle: JUnit Tests
+    failTaskOnFailedTests: true
+    mavenVersionOption: 'Default'
+    mavenAuthenticateFeed: false
+    effectivePomSkip: false
+
+- task: Docker@1
+  displayName: 'Build the Docker image'
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerRegistryEndpoint: 'docker-reg'
+    command: 'Build an image'
+    dockerFile: 'Dockerfile'
+    imageName: '$(ImageName)'
+    includeLatestTag: true
+    useDefaultContext: false
+    buildContext: '.'
+
+- task: Docker@1
+  displayName: 'Push the Docker image to Dockerhub'
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerRegistryEndpoint: 'docker-reg'
+    command: 'Push an image'
+    imageName: '$(ImageName)'
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))

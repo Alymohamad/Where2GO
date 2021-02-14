@@ -38,14 +38,12 @@ class Where2GoApplicationTests {
 	void contextLoads() {
 	}
 
-	//@Test
-	public void shouldReturn200WhenSendingRequestToController() throws Exception {
-		@SuppressWarnings("rawtypes")
-		ResponseEntity<Map> entity = this.testRestTemplate.getForEntity(
-				"http://localhost:" + this.port + "/find", Map.class);
+	// @Test
+	// public void shouldReturn200WhenSendingRequestToController() throws Exception {
+	// 	@SuppressWarnings("rawtypes")
+	// 	ResponseEntity<Map> entity = this.testRestTemplate.getForEntity(
+	// 			"http://localhost:" + this.port + "/find", Map.class);
 
-		then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
-	}
-
-
+	// 	then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
+	// }
 }
