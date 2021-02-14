@@ -38,7 +38,7 @@ class Where2GoApplicationTests {
 	void contextLoads() {
 	}
 
-	@Test
+	//@Test
 	public void shouldReturn200WhenSendingRequestToController() throws Exception {
 		@SuppressWarnings("rawtypes")
 		ResponseEntity<Map> entity = this.testRestTemplate.getForEntity(
