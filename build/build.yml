@@ -36,4 +36,4 @@ steps:
     dockerRegistryEndpoint: 'docker-reg'
     command: 'Push an image'
     imageName: '$(ImageName)'
-  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest')) 
+  condition: and(succeeded(), ne(variables['Build.Reason'], 'PullRequest'))
