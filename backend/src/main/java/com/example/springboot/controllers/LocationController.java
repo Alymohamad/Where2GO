@@ -35,12 +35,14 @@ public class LocationController {
         this.geoEncodingService = geoEncodingService;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("/find")
     @ResponseBody
     public Response findLocation(@RequestParam(name="city", required=false, defaultValue="Vienna") String city,
                                  @RequestParam(name="type", required=false) String type,
                                  @RequestParam(name="radius", required=false, defaultValue="30") int radius) {
 
+        logger.info(" ---------------------- City: "+ city +" Type: "+ type +" Radius: "+ radius);
         LatLong cityLatLong;
 
         if (type == null){

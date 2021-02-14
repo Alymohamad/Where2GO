@@ -10,9 +10,10 @@ html, body {
 }
 
 form {
-    max-width: 450px;
-    margin: 50px auto;
-    font-size: large;
+  display: flex;
+  max-width: 450px;
+  margin: 50px auto;
+  font-size: large;
 }
 
 .heighttext{
