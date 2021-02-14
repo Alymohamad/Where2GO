@@ -1,0 +1,43 @@
+trigger:
+- master
+- dev
+- "*"
+
+pr:
+  branches:
+    include:
+      - master
+      - dev
+      - "*"
+
+variables:
+  - name: vmImage
+    value: 'ubuntu-latest'
+
+stages:
+  - stage: Build
+    displayName: Build Phase
+    jobs:
+    - job: BuildJob
+      pool:
+        vmImage: $(vmImage)
+      variables:
+      - template: build/vars-build.yml
+      steps:
+      - template: build/build.yml
+ 
+  - stage: Dev
+    displayName: Deploy Dev stage
+    condition: and(succeeded(), in(variables['build.sourceBranch'], 'refs/heads/dev'))
+    jobs:
+    - deployment: DeploymentJob1
+      pool:
+        vmImage: $(vmImage)
+      environment: dev
+      variables:
+      - template: deploy/vars-dev.yml
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+            - template: deploy/deploy.yml
