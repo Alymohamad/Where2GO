@@ -61,7 +61,7 @@ import { AgmCoreModule } from '@agm/core';
     MatSliderModule,
     GoogleMapsModule,
     AgmCoreModule.forRoot({
-      apiKey: ''
+      apiKey: 'AIzaSyBmIO594wcxzhjsoGiSHfIDzJifq5wT4kA'
     }),
   ],
   exports: [
