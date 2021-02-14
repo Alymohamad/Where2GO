@@ -69,6 +69,7 @@ BACKEND Settings:
     
     1.6a) go in the directory of the project Where2GO --> backend --> libs, and choose java-json.jar or 1.6b)
 
-    1.6b) download the file from "https://sourceforge.net/projects/json-lib/", after downloading it 
+    1.6b) download the file from "https://sourceforge.net/projects/json-lib/", after downloading it
+    
         1.6b.1) create a folder in the project directory Where2GO --> backend, create a folder libs and paste the downloaded file inside
         1.6b.2) repeat the step 1.6a)
