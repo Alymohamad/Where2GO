@@ -37,4 +37,18 @@ class Where2GoApplicationTests {
 	@Test
 	void contextLoads() {
 	}
+<<<<<<< HEAD:src/test/java/com/example/springboot/Where2GoApplicationTests.java
+=======
+
+	//@Test
+	public void shouldReturn200WhenSendingRequestToController() throws Exception {
+		@SuppressWarnings("rawtypes")
+		ResponseEntity<Map> entity = this.testRestTemplate.getForEntity(
+				"http://localhost:" + this.port + "/find", Map.class);
+
+		then(entity.getStatusCode()).isEqualTo(HttpStatus.OK);
+	}
+
+
+>>>>>>> 5b695499c00ae467d75c6dbeedabfbc5d33d0bd6:backend/src/test/java/com/example/springboot/Where2GoApplicationTests.java
 }
